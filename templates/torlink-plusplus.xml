@@ -13,9 +13,9 @@
   <ReadMe/>
   <Overview>TorLink++ is a self-hosted Torznab + torrent-download gateway built on top of the original Torlink terminal torrent finder/downloader. The original Torlink project, its terminal TUI, curated search experience, source integrations, and downloader foundation were created by bairon / baairon. Full credit for that original work belongs to the original author. This repository is a fork that adds a LAN-friendly web layer and automation integrations around that foundation.</Overview>
   <Category>Downloaders:</Category>
-  <WebUI>http://[IP]:[PORT:9117]</WebUI>
-  <TemplateURL/>
-  <Icon>https://github.com/calmasacow/TorLink-PlusPlus/blob/main/TLPP-icon.png</Icon>
+  <WebUI>http://[IP]:[PORT:9117]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/calmasacow/unraid-templates/main/templates/torlink-plusplus.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/calmasacow/TorLink-PlusPlus/main/web/torlink-plusplus-logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
@@ -23,7 +23,7 @@
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="Web UI / Torznab Port" Target="9117" Default="9117" Mode="tcp" Description="Browser Web UI and Torznab API port. Use http://[IP]:[PORT:9117]/ for the Web UI and http://[IP]:[PORT:9117]/api?apikey=YOUR_KEY for Radarr/Sonarr." Type="Port" Display="always" Required="false" Mask="false">9117</Config>
+  <Config Name="Web UI / Torznab Port" Target="9117" Default="19117" Mode="tcp" Description="Browser Web UI and Torznab API port. Host port 19117 avoids the common Jackett conflict on 9117. Use http://[IP]:[PORT:9117]/ for the Web UI and http://[IP]:[PORT:9117]/api?apikey=YOUR_KEY for Radarr/Sonarr." Type="Port" Display="always" Required="false" Mask="false">19117</Config>
   <Config Name="Downloads" Target="/downloads" Default="/mnt/user/downloads/torlink" Mode="rw" Description="Host path where TorLink++ writes built-in downloader files. The container path must remain /downloads." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/torlink</Config>
   <Config Name="Torznab API Key" Target="TORLINK_API_KEY" Default="" Mode="" Description="Long random API key for Radarr/Sonarr/Torznab access. You can also generate/rotate this from the trusted Web UI after install." Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Trusted Web UI" Target="TORLINK_WEBUI_TRUSTED" Default="" Mode="" Description="Allows same-origin browser Web UI requests without manually entering the API key. Only enable on a trusted LAN." Type="Variable" Display="always" Required="false" Mask="false">true</Config>

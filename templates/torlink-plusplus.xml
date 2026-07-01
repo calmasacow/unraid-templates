@@ -1,29 +1,37 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>TorLink++</Name>
-  <Repository>calmasacow/torlink-plusplus:latest</Repository>
+  <Name>TorLink_PlusPlus</Name>
+  <Repository>calmasacow/torlink-plusplus</Repository>
   <Registry>https://hub.docker.com/r/calmasacow/torlink-plusplus</Registry>
   <Network>bridge</Network>
   <MyIP/>
+  <MyMAC/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/calmasacow/TorLink-PlusPlus/issues</Support>
+  <Support>https://forums.unraid.net/topic/199704-support-calmasacow-torlink/</Support>
   <Project>https://github.com/calmasacow/TorLink-PlusPlus</Project>
-  <Overview>TorLink++ is a Torznab-compatible torrent search and download gateway built on a fork of the original Torlink terminal torrent finder/downloader.</Overview>
-  <Description>TorLink++ extends the original Torlink project by bairon with a LAN-friendly Web GUI, Radarr/Sonarr-compatible Torznab API, qBittorrent handoff, built-in downloader queue, and a real embedded browser TUI powered by xterm.js and a server-side PTY. Full credit for the original Torlink TUI, curated search experience, source integrations, and downloader foundation belongs to the original author, bairon / baairon.</Description>
-  <Category>Downloaders: Tools:Utilities</Category>
-  <WebUI>http://[IP]:[PORT:9117]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/calmasacow/unraid-templates/main/templates/torlink-plusplus.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/calmasacow/TorLink-PlusPlus/main/web/torlink-plusplus-logo.png</Icon>
-  <Config Name="Web UI / Torznab Port" Target="9117" Default="19117" Mode="tcp" Description="Browser Web UI and Torznab API port. Use http://[IP]:[PORT:9117]/ for the Web UI and http://[IP]:[PORT:9117]/api?apikey=YOUR_KEY for Radarr/Sonarr." Type="Port" Display="always" Required="true" Mask="false">19117</Config>
+  <ReadMe/>
+  <Overview>TorLink++ is a self-hosted Torznab + torrent-download gateway built on top of the original Torlink terminal torrent finder/downloader. The original Torlink project, its terminal TUI, curated search experience, source integrations, and downloader foundation were created by bairon / baairon. Full credit for that original work belongs to the original author. This repository is a fork that adds a LAN-friendly web layer and automation integrations around that foundation.</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:9117]</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/calmasacow/TorLink-PlusPlus/blob/main/TLPP-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1782922882</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Web UI / Torznab Port" Target="9117" Default="9117" Mode="tcp" Description="Browser Web UI and Torznab API port. Use http://[IP]:[PORT:9117]/ for the Web UI and http://[IP]:[PORT:9117]/api?apikey=YOUR_KEY for Radarr/Sonarr." Type="Port" Display="always" Required="false" Mask="false">9117</Config>
   <Config Name="Downloads" Target="/downloads" Default="/mnt/user/downloads/torlink" Mode="rw" Description="Host path where TorLink++ writes built-in downloader files. The container path must remain /downloads." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/downloads/torlink</Config>
-  <Config Name="Torznab API Key" Target="TORLINK_API_KEY" Default="" Mode="" Description="Long random API key for Radarr/Sonarr/Torznab access. You can also generate/rotate this from the trusted Web UI after install." Type="Variable" Display="always" Required="true" Mask="true"></Config>
-  <Config Name="Trusted Web UI" Target="TORLINK_WEBUI_TRUSTED" Default="true" Mode="" Description="Allows same-origin browser Web UI requests without manually entering the API key. Only enable on a trusted LAN." Type="Variable" Display="always" Required="true" Mask="false">true</Config>
-  <Config Name="Download Directory" Target="TORLINK_DOWNLOAD_DIR" Default="/downloads" Mode="" Description="Built-in downloader target inside the container. Leave as /downloads unless you also change the Downloads path mapping." Type="Variable" Display="advanced" Required="true" Mask="false">/downloads</Config>
-  <Config Name="Torznab Empty Query" Target="TORLINK_TORZNAB_EMPTY_QUERY" Default="avatar" Mode="" Description="Fallback broad query used when Radarr/Sonarr validates Torznab without a search term." Type="Variable" Display="advanced" Required="false" Mask="false">avatar</Config>
-  <Config Name="qBittorrent Web UI URL" Target="TORLINK_QBIT_URL" Default="" Mode="" Description="Optional. qBittorrent Web UI URL for manual QBT button handoff, for example http://qbittorrent:8080. Radarr/Sonarr should normally use their own download-client settings." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
-  <Config Name="qBittorrent Username" Target="TORLINK_QBIT_USERNAME" Default="" Mode="" Description="Optional qBittorrent username for manual QBT button handoff." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
-  <Config Name="qBittorrent Password" Target="TORLINK_QBIT_PASSWORD" Default="" Mode="" Description="Optional qBittorrent password or API key for manual QBT button handoff." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
-  <Config Name="qBittorrent Category" Target="TORLINK_QBIT_CATEGORY" Default="torlink" Mode="" Description="Optional qBittorrent category for manual QBT button handoff." Type="Variable" Display="advanced" Required="false" Mask="false">torlink</Config>
-  <Config Name="qBittorrent Save Path" Target="TORLINK_QBIT_SAVE_PATH" Default="" Mode="" Description="Optional qBittorrent save path override for manual QBT button handoff. Leave blank to use qBittorrent defaults." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Torznab API Key" Target="TORLINK_API_KEY" Default="" Mode="" Description="Long random API key for Radarr/Sonarr/Torznab access. You can also generate/rotate this from the trusted Web UI after install." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Trusted Web UI" Target="TORLINK_WEBUI_TRUSTED" Default="" Mode="" Description="Allows same-origin browser Web UI requests without manually entering the API key. Only enable on a trusted LAN." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Torznab Empty Query" Target="TORLINK_TORZNAB_EMPTY_QUERY" Default="avatar" Mode="" Description="Fallback broad query used when Radarr/Sonarr validates Torznab without a search term." Type="Variable" Display="always" Required="false" Mask="false">avatar</Config>
+  <Config Name="qBittorrent Web UI URL" Target="TORLINK_QBIT_URL" Default="" Mode="" Description="Optional. qBittorrent Web UI URL for manual QBT button handoff, for example http://qbittorrent:8080. Radarr/Sonarr should normally use their own download-client settings." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="qBittorrent Username" Target="TORLINK_QBIT_USERNAME" Default="" Mode="" Description="Optional qBittorrent username for manual QBT button handoff." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="qBittorrent Password" Target="TORLINK_QBIT_PASSWORD" Default="" Mode="" Description="Optional qBittorrent password or API key for manual QBT button handoff." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="qBittorrent Category" Target="TORLINK_QBIT_CATEGORY" Default="torlink" Mode="" Description="Optional qBittorrent category for manual QBT button handoff." Type="Variable" Display="always" Required="false" Mask="false">torlink</Config>
+  <Config Name="qBittorrent Save Path" Target="TORLINK_QBIT_SAVE_PATH" Default="" Mode="" Description="Optional qBittorrent save path override for manual QBT button handoff. Leave blank to use qBittorrent defaults." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <TailscaleStateDir/>
 </Container>

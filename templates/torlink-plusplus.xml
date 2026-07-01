@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>TorLink_PlusPlus</Name>
+  <Name>TorLink-PlusPlus</Name>
   <Repository>calmasacow/torlink-plusplus</Repository>
   <Registry>https://hub.docker.com/r/calmasacow/torlink-plusplus</Registry>
   <Network>bridge</Network>

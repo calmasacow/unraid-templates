@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<CommunityApplications>
+  <Profile>Unraid Community Applications templates maintained by calmasacow. This repository currently provides the TorLink++ Docker template, packaging a Torznab-compatible torrent search and download gateway built on a fork of the original Torlink project by bairon.</Profile>
+  <Icon>https://raw.githubusercontent.com/calmasacow/TorLink-PlusPlus/main/web/torlink-plusplus-logo.png</Icon>
+  <WebPage>https://github.com/calmasacow/unraid-templates</WebPage>
+  <Forum>https://github.com/calmasacow/unraid-templates/issues</Forum>
+</CommunityApplications>
